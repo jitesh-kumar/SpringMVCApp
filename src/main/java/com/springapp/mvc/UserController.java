@@ -44,7 +44,7 @@ public class UserController {
     }
 
     @RequestMapping("/delete/{userId}")
-    public String deleteUser(@PathVariable("userId") Long userId) {
+    public String deleteUser(@PathVariable("userId") int userId) {
         userRepository.delete(userRepository.findOne(userId));
         return "redirect:/";
     }

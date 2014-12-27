@@ -2,26 +2,32 @@ package com.springapp.mvc;
 
 import javax.persistence.*;
 
+@Table(name = "user")
 @Entity(name = "account")
 public class User {
+
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
 
     @Basic
+    @Column(name = "fname")
     private String firstName;
 
     @Basic
+    @Column(name = "lname")
     private String lastName;
 
     @Basic
+    @Column(name = "email")
     private String email;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 

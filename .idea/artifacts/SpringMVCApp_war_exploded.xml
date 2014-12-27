@@ -2,7 +2,6 @@
   <artifact type="exploded-war" build-on-make="true" name="SpringMVCApp:war exploded">
     <output-path>$PROJECT_DIR$/target/SpringMVCApp</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="SpringMVCApp/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="SpringMVCApp" />
@@ -15,9 +14,9 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-aop:3.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Maven: org.springframework:spring-beans:3.2.0.RELEASE" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-expression:3.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:3.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-jpa:1.2.0.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons-core:1.4.0.RELEASE" />
@@ -39,9 +38,14 @@
           <element id="library" level="project" name="Maven: asm:asm:3.1" />
           <element id="library" level="project" name="Maven: javassist:javassist:3.12.0.GA" />
           <element id="library" level="project" name="Maven: org.hsqldb:hsqldb:2.2.9" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.9" />
           <element id="library" level="project" name="Maven: org.json:json:20080701" />
         </element>
       </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="C:\Users\SAURAV\Desktop\SpringMVCApp-master\SpringMVCApp-master\target/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="SpringMVCApp/web/Web" />
     </root>
   </artifact>
 </component>
