@@ -33,7 +33,7 @@ public class UserController {
             userJSON.put("lastName", user.getLastName());
             userJSON.put("email", user.getEmail());
             userArray.put(userJSON);
-        }
+        }//dd
         return userArray.toString();
     }
 
