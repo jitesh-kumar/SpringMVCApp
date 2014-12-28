@@ -69,15 +69,11 @@ public class UserController {
         System.out.println("1");
         if (!file.isEmpty()) {
             try {
-                System.out.println("2");
                 byte[] bytes = file.getBytes();
-                System.out.println("3");
                 File ff=new File("c:\\upload\\"+name);
                 System.out.println(ff.getAbsolutePath());
                 BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(ff));
-                System.out.println("4");
                 stream.write(bytes);
-                System.out.println("5");
                 stream.close();
                 return "You successfully uploaded   ";
             } catch (Exception e) {
