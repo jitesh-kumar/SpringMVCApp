@@ -8,6 +8,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.*;
 
 @Controller
 public class UserController {
@@ -58,5 +61,33 @@ public class UserController {
     public String deleteUser(@PathVariable("userId") int userId) {
         userRepository.delete(userRepository.findOne(userId));
         return "redirect:/";
+    }
+
+    @RequestMapping(value="/upload", method=RequestMethod.POST)
+    public @ResponseBody String handleFileUpload(@RequestParam("filedata") MultipartFile file,
+                                                 @RequestParam("filename") String name){
+        System.out.println("1");
+        if (!file.isEmpty()) {
+            try {
+                System.out.println("2");
+                byte[] bytes = file.getBytes();
+                System.out.println("3");
+                File ff=new File("c:\\upload\\"+name);
+                System.out.println(ff.getAbsolutePath());
+                BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(ff));
+                System.out.println("4");
+                stream.write(bytes);
+                System.out.println("5");
+                stream.close();
+                return "You successfully uploaded   ";
+            } catch (Exception e) {
+                StringWriter errors = new StringWriter();
+                e.printStackTrace(new PrintWriter(errors));
+                System.out.println(errors.toString());
+                return "You failed to upload " + "" + " => " + errors.toString();
+            }
+        } else {
+            return "You failed to upload " + "" + " because the file was empty.";
+        }
     }
 }
