@@ -21,6 +21,17 @@ public class UserController {
         return "users";
     }
 
+    @RequestMapping(value = "/person", method = RequestMethod.GET)
+    public String getPerson() {
+        return "index";
+    }
+    @RequestMapping(value="/apple", method = RequestMethod.POST)
+    public @ResponseBody Person post( @RequestBody final  Person person) {
+
+        System.out.println(person.getfName() + " " + person.getlName());
+        return person;
+    }
+
     @RequestMapping(value = "/api/users", method = RequestMethod.GET)
     public
     @ResponseBody
@@ -33,7 +44,7 @@ public class UserController {
             userJSON.put("lastName", user.getLastName());
             userJSON.put("email", user.getEmail());
             userArray.put(userJSON);
-        }//dd
+        }
         return userArray.toString();
     }
 
